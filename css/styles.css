@@ -1,0 +1,37 @@
+/* Color Palette 
+
+Background - #181A1B - Dark grey
+Font (main) - #CECAC3 - Light grey
+*/ 
+
+@import 'https://fonts.googleapis.com/css?family=Raleway';
+
+:root {
+	--text-color: #CECAC3;
+	--background-color: #181A1B;
+	--dark-grey: #2b2b2b;
+	--heading__font-weight: 700;
+}
+
+
+body {
+	background-color: var(--background-color);
+	font-family: 'Chivo Mono', monospace;
+	color: var(--text-color);
+	font-weight:  400;
+}
+
+h1 {
+	font-size:  30px;
+	font-weight: var(--heading__font-weight);
+}
+
+h2 {
+	font-size:  24px;
+	font-weight: var(--heading__font-weight);
+}
+
+h3 {
+	font-size:  18px;
+	font-weight:  var(--heading__font-weight);
+}
