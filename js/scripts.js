@@ -39,6 +39,15 @@ let pokemonList2 = [
     }
 ];
 
+function printArrayDetails(list){
+    for (let i=0; i< list.length; i++){
+        document.write("<p>"+ list[i].name + "</p>")
+        console.log(list[i].name);
+    }
+}
+
+printArrayDetails(pokemonList);
+printArrayDetails(pokemonList2);
 /* for (let i=0; i< pokemonList.length; i++){
 
     if (pokemonList[i].height >=0.5){
