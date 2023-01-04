@@ -1,5 +1,11 @@
 let pokemonList = [
     {
+        name: 'Sprigatito',
+        height: 0.4,
+        type: ['Grass']
+    },
+
+    {
         name: 'Fuecoco',
         height: 0.4,
         type: ['Fire']
@@ -9,17 +15,15 @@ let pokemonList = [
         name: 'Quaxly',
         height: 0.5,
         type: ['Water']
-    },
-
-    {
-        name: 'Sprigatito',
-        height: 0.4,
-        type: ['Grass']
     }
 
 ];
 
-for (let i=0; i< pokemonList.length; i++){
+let pokemonList2 = [
+    {name: ''}
+]
+
+/* for (let i=0; i< pokemonList.length; i++){
 
     if (pokemonList[i].height >=0.5){
         document.write(pokemonList[i].name + " - Height: " + pokemonList[i].height + " - Wow, that's big!" + "<br>");
@@ -27,9 +31,11 @@ for (let i=0; i< pokemonList.length; i++){
         console.log(pokemonList[i].name + " - Height: " + pokemonList[i].height + " - Wow, that's big!");
 
     } else {
-        document.write(pokemonList[i].name + " - Height: " + pokemonList[i].height + "<br>")
+        document.write(pokemonList[i].name + " - Height: " + pokemonList[i].height + "<br>") 
 
         console.log(pokemonList[i].name + " - Height: " + pokemonList[i].height + ")");
     
 }
  }
+
+ */
