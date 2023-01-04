@@ -20,8 +20,24 @@ let pokemonList = [
 ];
 
 let pokemonList2 = [
-    {name: ''}
-]
+    {
+        name: 'Floragato',
+        height: 0.9,
+        type: ['Grass']
+    },
+
+    {
+        name: 'Crocalor',
+        height: 1.0,
+        type: ['Fire']
+    },
+
+    {
+        name: 'Quaxwell',
+        height: 1.2,
+        type: ['Water']
+    }
+];
 
 /* for (let i=0; i< pokemonList.length; i++){
 
