@@ -19,7 +19,7 @@ let pokemonList = [
 
 ];
 
-let pokemonList2 = [
+/* let pokemonList2 = [
     {
         name: 'Floragato',
         height: 0.9,
@@ -48,7 +48,9 @@ function printArrayDetails(list){
 
 printArrayDetails(pokemonList);
 printArrayDetails(pokemonList2);
-/* for (let i=0; i< pokemonList.length; i++){
+
+*/
+for (let i=0; i< pokemonList.length; i++){
 
     if (pokemonList[i].height >=0.5){
         document.write(pokemonList[i].name + " - Height: " + pokemonList[i].height + " - Wow, that's big!" + "<br>");
@@ -62,5 +64,3 @@ printArrayDetails(pokemonList2);
     
 }
  }
-
- */
