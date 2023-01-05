@@ -67,7 +67,7 @@ function printDetails (pokemon) {
 	if (pokemon.height >= 1.0) {
 		highlight = " - Wow, that’s big!";
 	} 
-	document.write(`<li>${pokemon.name} (height: ${pokemon.height}) ${highlight}</li>`);
+	document.write(`<li>${pokemon.name} - Height: ${pokemon.height} ${highlight}</li>`);
 }
 
 /* 
