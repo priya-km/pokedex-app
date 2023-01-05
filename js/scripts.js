@@ -19,6 +19,10 @@ let pokemonList = [
 
 ];
 
+function myLoopFunction(list) {
+    document.write(list.name + " - Height: " + list.height + "<br>");
+}
+pokemonList.forEach(myLoopFunction);
 /* let pokemonList2 = [
     {
         name: 'Floragato',
@@ -50,6 +54,8 @@ printArrayDetails(pokemonList);
 printArrayDetails(pokemonList2);
 
 */
+
+/*
 for (let i=0; i< pokemonList.length; i++){
 
     if (pokemonList[i].height >=0.5){
@@ -63,4 +69,4 @@ for (let i=0; i< pokemonList.length; i++){
         console.log(pokemonList[i].name + " - Height: " + pokemonList[i].height + ")");
     
 }
- }
+ } */
