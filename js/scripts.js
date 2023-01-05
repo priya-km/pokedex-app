@@ -1,7 +1,9 @@
 let pokemonRepository = (function () {
 
-    let pokemonList = [
-        {
+    let pokemonList = [];
+       /*  -- OLD ARRAY OBJECT LISTING --
+       
+       {
             name: 'Sprigatito',
             height: 0.4,
             type: ['Grass']
@@ -37,26 +39,43 @@ let pokemonRepository = (function () {
             type: ['Water']
         }
     ];
-
-    function getAll () {
-        return pokemonList;
-    }
+    */
     function add (pokemon) {
         pokemonList.push(pokemon);
+    }
+    function getAll () {
+        return pokemonList;
     }
     return {
         getAll: getAll,
         add: add
     }
-})()
+})();
 
-console.log(pokemonRespository.getAll())
+pokemonRepository.add({ name: 'Sprigatito', height: 0.4, type: ['Grass'] });
+pokemonRepository.add({ name: 'Fuecoco', height: 0.4, type: ['Fire'] });
+pokemonRepository.add({ name: 'Quaxly', height: 0.5, type: ['Water'] });
+pokemonRepository.add({ name: 'Floragato', height: 0.9, type: ['Grass'] });
+pokemonRepository.add({ name: 'Crocalor', height: 1.0, type: ['Fire'] });
+pokemonRepository.add({ name: 'Quaxwell', height: 1.2, type: ['Water'] });
 
+let pokemonList = pokemonRepository.getAll();
+
+pokemonList.forEach(printDetails);
+function printDetails (pokemon) {
+	let highlight = '';
+	if (pokemon.height >= 1.0) {
+		highlight = " - Wow, that’s big!";
+	} 
+	document.write(`<li>${pokemon.name} (height: ${pokemon.height}) ${highlight}</li>`);
+}
+
+/* 
+    --- OLD FOR EACH CODE BEFORE IIFE IMPLEMENTATION ---
 function myLoopFunction(list) {
     document.write(list.name + " - Height: " + list.height + "<br>");
 }
 pokemonList.forEach(myLoopFunction);
-/* 
     --- POKEMONLIST2 ENTRIES + printArrayDetails function + OLD for loop code below ---
 
 let pokemonList2 = [
