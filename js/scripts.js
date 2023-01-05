@@ -1,29 +1,65 @@
-let pokemonList = [
-    {
-        name: 'Sprigatito',
-        height: 0.4,
-        type: ['Grass']
-    },
+let pokemonRepository = (function () {
 
-    {
-        name: 'Fuecoco',
-        height: 0.4,
-        type: ['Fire']
-    },
+    let pokemonList = [
+        {
+            name: 'Sprigatito',
+            height: 0.4,
+            type: ['Grass']
+        },
 
-    {
-        name: 'Quaxly',
-        height: 0.5,
-        type: ['Water']
+        {
+            name: 'Fuecoco',
+            height: 0.4,
+            type: ['Fire']
+        },
+
+        {
+            name: 'Quaxly',
+            height: 0.5,
+            type: ['Water']
+        },
+
+        {
+            name: 'Floragato',
+            height: 0.9,
+            type: ['Grass']
+        },
+    
+        {
+            name: 'Crocalor',
+            height: 1.0,
+            type: ['Fire']
+        },
+    
+        {
+            name: 'Quaxwell',
+            height: 1.2,
+            type: ['Water']
+        }
+    ];
+
+    function getAll () {
+        return pokemonList;
     }
+    function add (pokemon) {
+        pokemonList.push(pokemon);
+    }
+    return {
+        getAll: getAll,
+        add: add
+    }
+})()
 
-];
+console.log(pokemonRespository.getAll())
 
 function myLoopFunction(list) {
     document.write(list.name + " - Height: " + list.height + "<br>");
 }
 pokemonList.forEach(myLoopFunction);
-/* let pokemonList2 = [
+/* 
+    --- POKEMONLIST2 ENTRIES + printArrayDetails function + OLD for loop code below ---
+
+let pokemonList2 = [
     {
         name: 'Floragato',
         height: 0.9,
@@ -43,6 +79,8 @@ pokemonList.forEach(myLoopFunction);
     }
 ];
 
+
+
 function printArrayDetails(list){
     for (let i=0; i< list.length; i++){
         document.write("<p>"+ list[i].name + "</p>")
@@ -56,6 +94,8 @@ printArrayDetails(pokemonList2);
 */
 
 /*
+
+    --- OLD FOR LOOP CODE ---
 for (let i=0; i< pokemonList.length; i++){
 
     if (pokemonList[i].height >=0.5){
