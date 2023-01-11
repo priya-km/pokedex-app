@@ -1,74 +1,89 @@
-let pokemonRepository = (function () {
+let pokemonRepository = (function() {
 
-    let pokemonList = [];
-       /*  -- OLD ARRAY OBJECT LISTING --
+    let pokemonList = [
        
        {
+            id: "1",
             name: 'Sprigatito',
             height: 0.4,
             type: ['Grass']
         },
 
         {
+            id: "2",
             name: 'Fuecoco',
             height: 0.4,
             type: ['Fire']
         },
 
         {
+            id: "3",
             name: 'Quaxly',
             height: 0.5,
             type: ['Water']
         },
 
         {
+            id: "4",
             name: 'Floragato',
             height: 0.9,
             type: ['Grass']
         },
     
         {
+            id: "5",
             name: 'Crocalor',
             height: 1.0,
             type: ['Fire']
         },
     
         {
+            id: "6",
             name: 'Quaxwell',
             height: 1.2,
             type: ['Water']
         }
-    ];
-    */
+    ]
+
     function add (pokemon) {
-        pokemonList.push(pokemon);
+        if(typeof pokemon === "object" &&
+        Object.keys(pokemon).includes("id") &&
+        Object.keys(pokemon).includes("name") &&
+        Object.keys(pokemon).includes("height") &&
+        Object.keys(pokemon).includes("type")) {
+            pokemon.List.push(pokemon);
+        } else {
+            alert("Fields are empty or incorrect.");
+        }
     }
     function getAll () {
         return pokemonList;
     }
+    function addListItem(pokemon){
+        let pokemonList = document.querySelector(".pokemon-list");
+        let listpokemon = document.createElement("li");
+        let button = document.createElement("button");
+        button.innerText = pokemon.name;
+        button.classList.add("button-class");
+        button.addEventListener("click", (Event) => showDetails(pokemon));
+        listpokemon.appendChild(button);
+        pokemonList.appendChild(listpokemon);
+    }
+    function showDetails(pokemon) {
+        console.log(pokemon);
+    }
     return {
         getAll: getAll,
-        add: add
+        add: add,
+        addListItem: addListItem
     }
 })();
 
-pokemonRepository.add({ name: 'Sprigatito', height: 0.4, type: ['Grass'] });
-pokemonRepository.add({ name: 'Fuecoco', height: 0.4, type: ['Fire'] });
-pokemonRepository.add({ name: 'Quaxly', height: 0.5, type: ['Water'] });
-pokemonRepository.add({ name: 'Floragato', height: 0.9, type: ['Grass'] });
-pokemonRepository.add({ name: 'Crocalor', height: 1.0, type: ['Fire'] });
-pokemonRepository.add({ name: 'Quaxwell', height: 1.2, type: ['Water'] });
+console.log(pokemonRepository.getAll());
+pokemonRepository.getAll().forEach(function (pokemon){
+    pokemonRepository.addListItem(pokemon);
+});
 
-let pokemonList = pokemonRepository.getAll();
-
-pokemonList.forEach(printDetails);
-function printDetails (pokemon) {
-	let highlight = '';
-	if (pokemon.height >= 1.0) {
-		highlight = " - Wow, that’s big!";
-	} 
-	document.write(`<li>${pokemon.name} - Height: ${pokemon.height} ${highlight}</li>`);
-}
 
 /* 
     --- OLD FOR EACH CODE BEFORE IIFE IMPLEMENTATION ---

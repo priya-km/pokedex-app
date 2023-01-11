@@ -38,3 +38,30 @@ h3 {
 	font-size:  18px;
 	font-weight:  var(--heading__font-weight);
 }
+
+.pokemon-list {
+	list-style: none;
+}
+.button-class {
+	background-color: #EF3E33; /* Pokeball red */
+	border: none;
+	color: white;
+	padding: 16px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-family: 'Chivo Mono', monospace;
+	font-size: 20px;
+	margin: 4px 2px;
+	-webkit-transition-duration: 0.4s; /* Safari */
+	transition-duration: 0.4s;
+	cursor: pointer;
+	background-color: white;
+	color: black;
+	border: 5px solid #EF3E33;
+	border-radius: 15px;
+  }
+
+  .center-align {
+	text-align: center;
+  }
