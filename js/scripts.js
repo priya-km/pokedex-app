@@ -120,8 +120,8 @@ let pokemonRepository = (function() {
       });
 
       function showDetails(item) {
-        pokemonRepository.loadDetails(item).then(function() {
-            console.log(item);
+        loadDetails(item).then(function() {
+          showModal(item.name, item.name+"Height: " +item.height,item.imageURL);
         });
       }
 
