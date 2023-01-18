@@ -47,6 +47,51 @@ let pokemonRepository = (function() {
         })
       }
 
+      function showModal(title, text, img) {
+        modalContainer.innerHTML='';
+        let modal = document.createElement('div');
+        modal.classList.add('modal');
+
+        // hide modal when user clicks close
+
+        let closeButtonElement = document.createElement('button');
+        closeButtonElement.classList.add('modal-close');
+        closeButtonElement.innterText='Close';
+        closeButtonElement.addEventListener('click', hideModal);
+
+        // h1 element in modal
+        let titleElement = document.createElement('h1');
+        titleElement.innerText = title;
+
+        // p element in modal
+        let contentElement = document.createElement('p');
+        contentElement.innerText = text;
+
+        // img element (pokemon sprite) in modal
+        let imageElement = document.createElement('img');
+        imageElement.setAttribute("src", 'img');
+        imageElement.setAttribute("alt", "Pokemon Sprite");
+
+        // Create above modal elements
+
+        modal.appendChild(closeButtonElement);
+        modal.appendChild(titleElement);
+        modal.appendChild(contentElement);
+        modal.appendChild(imageElement);
+        modalContainer.appendChild(modal);
+
+        modalContainer.classList.add('is-visible');
+
+        // hides modal when user clicks outside of the modal
+
+        modalContainer.addEventListener('click', (e) => {
+          let target = e.target;
+          if (target === modalContainer) {
+            hideModal();
+          }
+        });
+      }
+
       function loadDetails(item) {
         let url = item.detailsUrl;
         return fetch(url).then(function (response) {
@@ -60,6 +105,19 @@ let pokemonRepository = (function() {
           console.error(e);
         });
       }
+
+      function hideModal() {
+        let modalContainer = document.querySelector('#modal-container');
+        modalContainer.classList.remove('is-visible');
+      }
+
+      // hides modal when user clicks esc
+
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
+          hideModal();
+        }
+      });
 
       function showDetails(item) {
         pokemonRepository.loadDetails(item).then(function() {
@@ -78,69 +136,8 @@ let pokemonRepository = (function() {
 })();
 
 pokemonRepository.loadList().then(function() {
-    // Now data is loaded
+    //  go to pokemonRepository and return pokemon list
     pokemonRepository.getAll().forEach(function(pokemon){
       pokemonRepository.addListItem(pokemon);
     });
 });
-
-
-/* 
-    --- OLD FOR EACH CODE BEFORE IIFE IMPLEMENTATION ---
-function myLoopFunction(list) {
-    document.write(list.name + " - Height: " + list.height + "<br>");
-}
-pokemonList.forEach(myLoopFunction);
-    --- POKEMONLIST2 ENTRIES + printArrayDetails function + OLD for loop code below ---
-
-let pokemonList2 = [
-    {
-        name: 'Floragato',
-        height: 0.9,
-        type: ['Grass']
-    },
-
-    {
-        name: 'Crocalor',
-        height: 1.0,
-        type: ['Fire']
-    },
-
-    {
-        name: 'Quaxwell',
-        height: 1.2,
-        type: ['Water']
-    }
-];
-
-
-
-function printArrayDetails(list){
-    for (let i=0; i< list.length; i++){
-        document.write("<p>"+ list[i].name + "</p>")
-        console.log(list[i].name);
-    }
-}
-
-printArrayDetails(pokemonList);
-printArrayDetails(pokemonList2);
-
-*/
-
-/*
-
-    --- OLD FOR LOOP CODE ---
-for (let i=0; i< pokemonList.length; i++){
-
-    if (pokemonList[i].height >=0.5){
-        document.write(pokemonList[i].name + " - Height: " + pokemonList[i].height + " - Wow, that's big!" + "<br>");
-
-        console.log(pokemonList[i].name + " - Height: " + pokemonList[i].height + " - Wow, that's big!");
-
-    } else {
-        document.write(pokemonList[i].name + " - Height: " + pokemonList[i].height + "<br>") 
-
-        console.log(pokemonList[i].name + " - Height: " + pokemonList[i].height + ")");
-    
-}
- } */
