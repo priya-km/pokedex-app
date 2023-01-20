@@ -106,6 +106,8 @@ let pokemonRepository = (function() {
       
       function showDetails(pokemon) {
         loadDetails(pokemon).then(function () {
+          /* why can't I move the pokemon.imageUrl to any other position without there being an error? */
+          /* I want to put it right under the first pokemon.name */
           showModal(pokemon.name, pokemon.name + "'s height is: " + pokemon.height, pokemon.imageUrl);
         });
       }
