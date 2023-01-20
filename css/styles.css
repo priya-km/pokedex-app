@@ -109,6 +109,7 @@ h3 {
 	background:none;
 	color:rgb(10, 10, 10);
 	text-decoration: underline;
+	cursor: pointer;
   }
 
   .modal h1{
