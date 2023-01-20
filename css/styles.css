@@ -10,7 +10,7 @@ Hover color - lighter grey?
 @import 'https://fonts.googleapis.com/css?family=Raleway';
 
 :root {
-	--text-color: #CECAC3;
+	--text-color: #212121;
 	--background-color: #181A1B;
 	--dark-grey: #2b2b2b;
 	--heading__font-weight: 700;
@@ -107,7 +107,7 @@ h3 {
 	float:right;
 	border:0;
 	background:none;
-	color:#777;
+	color:rgb(10, 10, 10);
 	text-decoration: underline;
   }
 

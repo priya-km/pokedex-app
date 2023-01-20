@@ -13,6 +13,7 @@ let pokemonRepository = (function() {
         let button = document.createElement("button");
         button.innerText = pokemon.name;
         button.classList.add("button-class");
+        button.addEventListener('click', Event => showDetails(pokemon));
         pokemonItem.appendChild(button);
         pokemonList.appendChild(pokemonItem);
     }
@@ -41,6 +42,7 @@ let pokemonRepository = (function() {
         let url = item.detailsUrl;
         return fetch(url).then(function (response) {
           return response.json();
+
         }).then(function (details) {
           // item details below
           item.imageUrl = details.sprites.front_default;
@@ -78,7 +80,7 @@ let pokemonRepository = (function() {
 
         // img element (pokemon sprite) in modal
         let imageElement = document.createElement('img');
-        imageElement.setAttribute("src", 'img');
+        imageElement.setAttribute("src", img);
         imageElement.setAttribute("alt", "Pokemon Sprite");
 
         // Create above modal elements
@@ -104,7 +106,7 @@ let pokemonRepository = (function() {
       
       function showDetails(pokemon) {
         loadDetails(pokemon).then(function () {
-          showModal(pokemon);
+          showModal(pokemon.name, pokemon.name + "'s height is: " + pokemon.height, pokemon.imageUrl);
         });
       }
 
