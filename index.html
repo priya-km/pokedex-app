@@ -8,12 +8,39 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono&display=swap" rel="stylesheet">
-        <title>Home - Pokedex App</title>
+        <title>Kanto Pokedex</title>
         <link href="css/styles.css" rel="stylesheet" type="text/css" />
         <link rel="shortcut icon" href="./img/favicon-32x32.png">
     </head>
     <body>
-        <div id="modal-container"></div>
+        <nav class="navbar fixed-top">
+            <h1 class="navbar-text">Kanto Pokédex</h1>
+            <form class="navbar-form form-inline">
+              <input class="form-control search" type="search" placeholder="Search" aria-label="Search">
+            </form>
+          </nav>
+
+
+          <main class="main container">
+            <ul class="pokemon-list list-group-horizontal row"></ul>
+
+          <!-- MODAL -->
+            <div class="modal fade" tab-index="-1" role="dialog">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h2 class="modal-title"></h2>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                      
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body"></div>
+                </div>
+              </div>
+            </div>
+          </main>
 
 
         <ul class="list-group pokemon-list"></ul>
