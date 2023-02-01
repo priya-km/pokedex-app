@@ -50,6 +50,18 @@ ul {
 	color: white;
 }
 
+.navbar-kanto {
+	font-size:  30px;
+	font-weight: var(--heading__font-weight);
+	color:white;
+	text-decoration:none
+}
+
+.navbar-kanto:hover {
+	color:rgb(255, 219, 148)
+}
+
+
 main {
     margin-top: 120px;
   }
