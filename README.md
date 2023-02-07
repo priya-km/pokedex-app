@@ -1,8 +1,10 @@
 <div align="center">
+
 <h1>Pokedex App</h1>
 
 <br>
 
+    ## Description
 <p align="center">This is a Pokedex App that uses an API to load data and display a list of Pokemon along with their information.</p>
 
 <br>
@@ -11,7 +13,7 @@
 ![pokedex-app-homepage](https://user-images.githubusercontent.com/118628757/217350788-3a243bd3-2176-4b34-9c51-57f7f42b96f5.png)
 
 
-<h2>Built With</h2>
+## Built With
 
 
   
@@ -20,8 +22,8 @@
   <li>Javascript</li>
   <li>jQuery</li>
   <li>Bootstrap</li>
-  
-  <h2>Features</h2>
+ 
+  ## Features
   <br>
   <h4>Modal with Pokemon details</h4>
   
@@ -33,7 +35,7 @@
 ![search-function](https://user-images.githubusercontent.com/118628757/217351013-bf148afd-9c71-4f5b-b814-13da554b27bd.png)
 
 
-<h2>Created By</h2>
+## Author
 <h3>**Priya Maharban**<h3>
 
 [GitHub Profile](https://github.com/priya-km "Priya-Maharban")
