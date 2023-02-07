@@ -45,7 +45,7 @@
   <br><br>
 [Email](mailto:priyakmaharban@gmail.com?subject=Hi% "Hi!")
   <br><br>
-[Portfolio Website](https://priya-km.github.io/portfolio-website/ "Welcome")
+[Portfolio Website](https://priya-km.github.io/portfolio "Welcome")
   <br><br>
 
   
