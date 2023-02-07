@@ -9,6 +9,11 @@
     <h4>Pokedex App Homepage</h4>
   
 ![pokedex-app-homepage](https://user-images.githubusercontent.com/118628757/217350788-3a243bd3-2176-4b34-9c51-57f7f42b96f5.png)
+    
+## Links
+ [Live View](https://priya-km.github.io/pokedex-app/ "Live View")
+    <br>
+ [Pokemon API](https://pokeapi.co/api/v2/pokemon/?limit=150 "Pokemon API")
 
 
 ## Built With
