@@ -3,7 +3,7 @@
 <h1>Pokedex App</h1>
 
 ## Description
-<p align="center">This is a Pokedex App that uses an API to load data and display a list of Pokemon along with their information.</p>
+<p align="center">This is a Pokedex App that uses an external API to load data and display a list of Pokemon along with their information.</p>
 
 <br>
     <h4>Pokedex App Homepage</h4>
