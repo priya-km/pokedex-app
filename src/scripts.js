@@ -60,32 +60,35 @@ let pokemonRepository = (function () {
         });
     }
 
-    function loadDetails(pokemon) {
-      let url = pokemon.detailsUrl;
-        return fetch(url)
-        .then(function (response) {
-          return response.json();
-        })
-        .then(function (details) {
-          // pokemon details below
-          pokemon.frontSprite = details.sprites.front_default;
-          pokemon.height = details.height;
-          pokemon.types = details.types;
-  
-          let arrayOfTypes = [];
-          details.types.forEach(function(item) {
-            arrayOfTypes.push(item.type.name);
-          });
-          // Adding a separator for pokemon with multiple types or abilities
-          pokemon.types = arrayOfTypes.join(' | ');
-  
-          let arrayOfAbilities = [];
-          details.abilities.forEach(function (item) {
-            arrayOfAbilities.push(item.ability.name);
-          });
-          pokemon.abilities = arrayOfAbilities.join(' | ');
-        })
-    }
+function loadDetails(pokemon) {
+  let url = pokemon.detailsUrl;
+    return fetch(url)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (details) {
+      // pokemon details below
+      pokemon.frontSprite = details.sprites.front_default;
+      pokemon.height = details.height;
+      pokemon.types = details.types;
+
+      let arrayOfTypes = [];
+      details.types.forEach(function(item) {
+        arrayOfTypes.push(item.type.name);
+      });
+      // Adding a separator for pokemon with multiple types or abilities
+      pokemon.types = arrayOfTypes.join(' | ');
+
+      let arrayOfAbilities = [];
+      details.abilities.forEach(function (item) {
+        arrayOfAbilities.push(item.ability.name);
+      });
+      pokemon.abilities = arrayOfAbilities.join(' | ');
+
+      return pokemon;
+    });
+}
+
   
 
     function removeList() {
