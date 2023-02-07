@@ -12,13 +12,13 @@ let pokemonRepository = (function () {
      function addKantoPokemon(pokemon) {
       loadDetails(pokemon).then(function () {
         let KantoPokemon = document.createElement('li');
-        KantoPokemon.classList.add('col');
+        $(KantoPokemon).addClass('col');
   
         let button = document.createElement('button');
         let buttonText = document.createElement('h2');
         button.appendChild(buttonText);
         buttonText.innerText = pokemon.name;
-        button.classList.add('button-class');
+        $(button).addClass('button-class');
         button.setAttribute('data-toggle', 'modal');
         button.setAttribute('data-target', '.modal');
   
@@ -93,13 +93,13 @@ let pokemonRepository = (function () {
     }
   
     function hideModal() {
-      pokemonModal.classList.add('hidden');
+      $(pokemonModal).addClass('hidden');
     }
   
     function showErrorMessage(message) {
       let errorMessage = document.createElement('p');
-      errorMessage.classList.add('error-message');
-      errorMessage.classList.add('col-5');
+      $(errorMessage).addClass('error-message');
+      $(errorMessage).addClass('col-5');
       errorMessage.innerText = message;
       printedList.appendChild(errorMessage);
     }
@@ -147,10 +147,10 @@ let pokemonRepository = (function () {
         let nameElement = document.querySelector('.modal-title');
         nameElement.innerText = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
         let imageElementFront = document.createElement('img');
-        imageElementFront.classList.add('modal-img');
+        $(imageElementFront).addClass('modal-img');
         imageElementFront.src = pokemon.frontSprite;
         let modalText = document.createElement('div');
-        modalText.classList.add('modal-text');
+        $(modalText).addClass('modal-text');
         let heightElement = document.createElement('p');
         heightElement.innerText = 'Height - ' + pokemon.height + 'M';
         let typesElement = document.createElement('p');
