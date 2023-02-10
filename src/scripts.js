@@ -136,14 +136,16 @@ function loadDetails(pokemon) {
 
   
     function showDetails(pokemon) {
-      loadDetails(pokemon).then(function () {
-        
-        let modalTitle = document.querySelector('.modal-title');
-        let modalBody = document.querySelector('.modal-body');
+      
+       let modalTitle = document.querySelector('.modal-title');
+       let modalBody = document.querySelector('.modal-body');
   
         // allows multiple modals to load and not crash or glitch
         modalTitle.innerHTML = '';
-        modalBody.innerHTML = '';
+        modalBody.innerHTML = 'Loading Pokemon...';
+      
+      loadDetails(pokemon).then(function () {
+         modalBody.innerHTML = '';
 
         /* attaching detail elements + their css styles */
 
